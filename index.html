@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="webapp.css">
   </head>
   <body>
-	<script src="webapp.js"></script>
     <header>
         <h1>Profit calculator v1.0 (MVP)</h1>
     </header>
     <main>
       <form action="" method="POST">
+
         <label for="brutoBedrag">Bruto bedrag:</label>
-        <p>test</p>
-        <input type="number" name="brutoBedragEntry" id="bbe" required placeholder="0">
-    </main>
+        <input type="number" name="brutoBedragEntry" id="brutoBedragEntry" required placeholder="200">
+    
+        <p id="nettoBedrag">Netto bedrag</p>
+      </main>
     <footer>Project by Ewout, Oct/Nov 2021</footer>
+    <!--Needs to be here, otherwise the form input id's cannot be found by js.-->
+    <script src="webapp.js"></script>
   </body>
 </html>
