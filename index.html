@@ -19,7 +19,20 @@
     
         <p>Netto bedrag: <span id="nettoBedrag">netto</span></p>
 
-        
+        <label for="clothesCostEntry">Prijs kleding: </label>
+        <input type="range" id="clothesCostEntry" min="1" max="100" value="5"><p id="clothesCostDisplay">5</p>
+        <br>
+        <br>
+        <label for="reset">Opnieuw beginnen</label><br>
+        <input type="reset" id="reset"><br><br>
+        <input type="submit" value="save">
+        <br>
+        <br>
+      </form>
+        <!--Temporarily ? put this outside the form, to avoid page refresh-->
+        <button id="goBtn">GO</button>
+        <p>Netto winst: <span id="nettoWinst">netto</span></p>
+
       </main>
 
 
