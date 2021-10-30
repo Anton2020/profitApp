@@ -7,9 +7,9 @@ O.b.v. het factuurbedrag en ingevoerde kosten een inschatting maken hoe winstgev
 Gebruiker voert in formulier het bruto bedrag in wat de klant heeft voorgesteld of met de klant is afgesproken.
 
 Hieronder staan invulvelden, sliders etc. om aan te geven:
-- kosten kleding (standaard op 0 euro)
-- kosten make-up (standaard op 1 euro)
-- kosten decoratie (standaard op 5 euro)
+- kosten kleding (standaard op 5 euro)
+- kosten make-up (standaard op 5 euro)
+- kosten decoratie (standaard op 1 euro)
 - kosten nieuwe software, bijv. Canva Pro, Elementor Pro, Adobe XD (standaard 1 euro)
 - verwachtte werktijd (in uren, standaard op 5)
 
