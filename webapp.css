@@ -32,3 +32,11 @@ figure figcaption {
 #moneyUntilNextColour {
   display: none;
 }
+
+#left {
+  float: left;
+}
+
+#right {
+  float: right;
+}

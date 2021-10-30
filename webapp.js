@@ -10,6 +10,7 @@ let hoursWorkElem = document.getElementById("hoursWorkEntry");
 let moneyNextColourElem = document.getElementById("moneyUntilNextColour");
 
 let goBtnElem = document.getElementById("goBtn");
+let storeInDbElem = document.getElementById("storeInDB");
 
 //methods
 function nettoStartCalc() {
@@ -66,11 +67,14 @@ function calculateProfitPerHour(netProfitResult) {
   nettoWinstElem.innerHTML = Math.floor(netProfitResult);
 }
 
-//Calculate the colour based on the net profit result
-goBtnElem.addEventListener("click", calculateProfit);
-
 //oninput to make the slider update dynamically
 clothesCostElem.oninput = updateClothesCostDisplay;
 makeupCostElem.oninput = updateMakeupCostDisplay;
 decorCostElem.oninput = updateDecorCostDisplay;
 softwareCostElem.oninput = updateSoftwareCostDisplay;
+
+//Calculate the colour based on the net profit result
+goBtnElem.addEventListener("click", calculateProfit);
+
+//Store the data from index.html form & DB form in the database
+//storeInDbElem.addEventListener("click", sampleFunction);
