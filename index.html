@@ -20,7 +20,7 @@
       </p>
       <form action="" method="POST">
         <label for="brutoBedragEntry">Bruto bedrag:</label>
-        <input type="number" name="brutoBedragEntry" id="brutoBedragEntry" required placeholder="200">
+        <input type="number" name="brutoBedragEntry" id="brutoBedragEntry" value="100" required placeholder="200">
     
         <div class="sliders">
           <label for="clothesCostEntry">Prijs kleding: </label>
@@ -46,14 +46,15 @@
         <br>
         <br>
         <hr>
-        <input type="submit" value="save">
         <br>
         <br>
       </form>
         <!--Temporarily ? put this outside the form, to avoid page refresh. Later this can send you to a results page.-->
-        <button id="goBtn">GO</button>
+        <button id="goBtn">Reken uit</button>
         <p>Netto winst: <span id="nettoWinst">netto</span></p>
-
+        <p id="moneyUntilNextColour"></p>
+        <br>
+        <input type="submit" value="Factuur opslaan in database">
       </main>
 
 

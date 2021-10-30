@@ -22,3 +22,13 @@ figure figcaption {
 .sliders p {
   display: inline-block;
 }
+
+#nettoWinst {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#untilNextColour,
+#moneyUntilNextColour {
+  display: none;
+}
