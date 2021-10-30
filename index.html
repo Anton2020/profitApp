@@ -17,12 +17,15 @@
         <label for="brutoBedragEntry">Bruto bedrag:</label>
         <input type="number" name="brutoBedragEntry" id="brutoBedragEntry" required placeholder="200">
     
-        <p>Netto bedrag: <span id="nettoBedrag">netto</span></p>
-
         <label for="clothesCostEntry">Prijs kleding: </label>
         <input type="range" id="clothesCostEntry" min="1" max="100" value="5"><p id="clothesCostDisplay">5</p>
         <br>
+        <label for="hoursWorkEntry">Uren werk: </label>
+        <input type="number" name="hoursWorkEntry" id="hoursWorkEntry" min="1" max="20" required placeholder="5">
         <br>
+        <br>
+        <hr>
+        <!--Needs to be improved to reset netto bedrag + prijs kleding no. as well-->
         <label for="reset">Opnieuw beginnen</label><br>
         <input type="reset" id="reset"><br><br>
         <input type="submit" value="save">

@@ -1,3 +1,11 @@
+#brutoBedragEntry {
+  display: block;
+}
+
+#clothesCostEntry {
+  display: inline-block;
+}
+
 #clothesCostDisplay {
-    display: inline-block;
+  display: inline-block;
 }
