@@ -5,7 +5,6 @@ O.b.v. het factuurbedrag en ingevoerde kosten een inschatting maken hoe winstgev
 
 ## MVP
 Gebruiker voert in formulier het bruto bedrag in wat de klant heeft voorgesteld of met de klant is afgesproken.
-Naast het invoerveld geeft de pagina al real-time weer hoeveel dit netto is.
 
 Hieronder staan invulvelden, sliders etc. om aan te geven:
 - kosten kleding (standaard op 0 euro)
