@@ -1,11 +1,24 @@
-#brutoBedragEntry {
-  display: block;
+body {
+  background-color: rgb(52, 122, 235, 0.5);
+  background-size: cover;
+  opacity: 0.99;
+}
+figure {
+  margin-block-start: 0;
+  margin-inline-start: 0;
 }
 
-#clothesCostEntry {
-  display: inline-block;
+figure img {
+  width: 18em;
+  height: 12em;
+  overflow: auto;
 }
 
-#clothesCostDisplay {
+figure figcaption {
+  float: left;
+  padding-right: 2em;
+}
+
+.sliders p {
   display: inline-block;
 }

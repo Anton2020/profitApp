@@ -9,25 +9,43 @@
   </head>
   <body>
     <header>
-        <h1>Profit calculator v1.0 (MVP)</h1>
+      <figure>
+        <img src="fullPageBackground.jpeg" alt="desk with laptop and drink">
+        <figcaption><h1>Profit calculator v1.0 (MVP)</h1></figcaption>
+      </figure>
     </header>
     <main>
-      <form action="" method="POST">
 
+      <p>Met deze rekentool kun je snel zien of een freelance opdracht winstgevend genoeg is.
+      </p>
+      <form action="" method="POST">
         <label for="brutoBedragEntry">Bruto bedrag:</label>
         <input type="number" name="brutoBedragEntry" id="brutoBedragEntry" required placeholder="200">
     
-        <label for="clothesCostEntry">Prijs kleding: </label>
-        <input type="range" id="clothesCostEntry" min="1" max="100" value="5"><p id="clothesCostDisplay">5</p>
+        <div class="sliders">
+          <label for="clothesCostEntry">Prijs kleding: </label>
+        <!--autocomplete attribute makes sure the slider moves back when refreshing the page-->
+        <input type="range" id="clothesCostEntry" min="0" max="100" value="5" autocomplete="off">
+        <p id="clothesCostDisplay">5</p>
         <br>
+        <label for="makeupCostEntry">Prijs makeup: </label>
+        <input type="range" id="makeupCostEntry" min="1" max="25" value="5" autocomplete="off">
+        <p id="makeupCostDisplay">5</p>
+        <br>
+        <label for="decorCostEntry">Prijs decoratie: </label>
+        <input type="range" id="decorCostEntry" min="1" max="75" value="1" autocomplete="off">
+        <p id="decorCostDisplay">1</p>
+        <br>
+        <label for="softwareCostEntry">Prijs software: </label>
+        <input type="range" id="softwareCostEntry" min="1" max="100" value="1" autocomplete="off">
+        <p id="softwareCostDisplay">1</p>
+        <br>
+        </div>
         <label for="hoursWorkEntry">Uren werk: </label>
-        <input type="number" name="hoursWorkEntry" id="hoursWorkEntry" min="1" max="20" required placeholder="5">
+        <input type="number" name="hoursWorkEntry" id="hoursWorkEntry" min="1" max="20" required value="5" placeholder="5">
         <br>
         <br>
         <hr>
-        <!--Needs to be improved to reset netto bedrag + prijs kleding no. as well-->
-        <label for="reset">Opnieuw beginnen</label><br>
-        <input type="reset" id="reset"><br><br>
         <input type="submit" value="save">
         <br>
         <br>
@@ -41,7 +59,9 @@
 
     <br>
     <br>  
-    <footer>Project by Ewout, Oct/Nov 2021</footer>
+    <footer><p>Project by Ewout, Oct/Nov 2021
+      Image courtesy of <a href="https://visaguide.world/tips/freelancing-germany/">Visa Guide</a>
+    </p></footer>
     <!--Needs to be here, otherwise the form input id's cannot be found by js.-->
     <script src="webapp.js"></script>
   </body>
