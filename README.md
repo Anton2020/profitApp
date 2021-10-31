@@ -19,12 +19,15 @@ After using 'Reken uit' the result is displayed.
 
 - When red or orange, an additional text shows up to suggest a rate increase to reach green profit levels.
 
+## Other
+The invoice is stored in the database with four columns: 1 hours worked 2 net amount earned 3 invoice date 4 company name.
+
 ## New features to come
-- Storing the invoice in the database invoiceTable with four columns: 1 net amount earned 2 hours worked 3 invoice date 4 company name.
+- Login screen or other way to remove login details from view
 - Separate page to search for old invoices (in said DB) based on company name.
 - ~ search for old invoices based on earned hours, to compare between companies.
 
 ## Technical details
-- Front-end uses HTML5, CSS3 and Vanilla JS.
-- API uses Axios framework
-- Database is built with mySQL and run locally
+- Front-end uses HTML5, CSS3 and (mostly) Vanilla JS.
+- Connect to mySQL with mysqljs: https://mysqljs.com/
+- Database is built with mySQL and run on remote (free) hosting
