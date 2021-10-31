@@ -12,6 +12,8 @@ let moneyNextColourElem = document.getElementById("moneyUntilNextColour");
 let goBtnElem = document.getElementById("goBtn");
 let storeInDbElem = document.getElementById("storeInDB");
 
+let resultArray = [];
+
 //methods
 function nettoStartCalc() {
   return (netAmount = brutoBedragElem.value * 0.8);
@@ -46,6 +48,8 @@ function calculateProfit() {
 
 function calculateProfitPerHour(netProfitResult) {
   let hoursWork = hoursWorkElem.value;
+  //1st result for the DB
+  resultArray.push(hoursWork);
   let netProfitPerHour = netProfitResult / hoursWork;
   //1.25 calculates the netto money back to bruto, because that's what you start off with
   let moneyUntilNextColour = Math.ceil(
@@ -64,7 +68,36 @@ function calculateProfitPerHour(netProfitResult) {
     nettoWinstElem.style.color = "green";
     moneyNextColourElem.style.display = "none";
   }
-  nettoWinstElem.innerHTML = Math.floor(netProfitResult);
+  let nettoWinst = Math.floor(netProfitResult);
+  //2nd result for the DB
+  resultArray.push(nettoWinst);
+  nettoWinstElem.innerHTML = nettoWinst;
+  confirmToStoreInDB();
+}
+
+function confirmToStoreInDB() {
+  if (!confirm("Wil je deze factuur opslaan in de administratie ?")) {
+    return;
+  }
+  askForDate();
+}
+
+function askForDate() {
+  let date = prompt(
+    "Op welke datum begint de opdracht ? Antwoord graag in blokjes van 2 cijfers, bijv. 05-01-22"
+  );
+  //3rd result for the DB
+  resultArray.push(date);
+
+  askForCompanyNameAndReturnDBInput();
+}
+
+function askForCompanyNameAndReturnDBInput() {
+  let companyName = prompt("Hoe heet het bedrijf ?");
+  //4th result for the DB
+  resultArray.push(companyName);
+  console.log(resultArray);
+  return resultArray;
 }
 
 //oninput to make the slider update dynamically
