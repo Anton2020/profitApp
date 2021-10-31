@@ -72,6 +72,7 @@ function calculateProfitPerHour(netProfitResult) {
   //2nd result for the DB
   resultArray.push(nettoWinst);
   nettoWinstElem.innerHTML = nettoWinst;
+
   confirmToStoreInDB();
 }
 
@@ -84,7 +85,7 @@ function confirmToStoreInDB() {
 
 function askForDate() {
   let date = prompt(
-    "Op welke datum begint de opdracht ? Antwoord graag in blokjes van 2 cijfers, bijv. 05-01-22"
+    "Op welke datum begint de opdracht ? Antwoord graag in blokjes van 2 cijfers (YYYY-MM-DD), bijv. 2022-01-05 is 5 januari 2022"
   );
   //3rd result for the DB
   resultArray.push(date);
@@ -96,10 +97,28 @@ function askForCompanyNameAndReturnDBInput() {
   let companyName = prompt("Hoe heet het bedrijf ?");
   //4th result for the DB
   resultArray.push(companyName);
-  console.log(resultArray);
-  return resultArray;
+
+  connectToDBAndPost(resultArray);
 }
 
+function connectToDBAndPost(resultArray) {
+  let hoursWorked = parseInt(resultArray[0]);
+  let netAmountEarned = parseInt(resultArray[1]);
+  let invoice_date = resultArray[2];
+  let companyName = resultArray[3];
+
+  const query = `INSERT INTO invoices (hoursWorked, netAmountEarned, invoice_date, companyName) VALUES(${hoursWorked},${netAmountEarned},"${invoice_date}","${companyName}")`;
+  MySql.Execute(
+    "sql11.freemysqlhosting.net", //host
+    "sql11448055", //username
+    "DS7RpH5Mtf", //password
+    "sql11448055", //database
+    query,
+    function (data) {
+      console.log(data);
+    }
+  );
+}
 //oninput to make the slider update dynamically
 clothesCostElem.oninput = updateClothesCostDisplay;
 makeupCostElem.oninput = updateMakeupCostDisplay;

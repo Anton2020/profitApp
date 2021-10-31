@@ -1,0 +1,35 @@
+Create table where all the columns are required, invoice_ID is automatically generated.
+CREATE TABLE invoices (
+  invoice_id INT NOT NULL AUTO_INCREMENT,
+  hoursWorked SMALLINT NOT NULL,
+  netAmountEarned INT NOT NULL,
+  invoice_date DATE NOT NULL,
+  companyName VARCHAR(30) NOT NULL,
+  PRIMARY KEY (invoice_id)
+);
+
+Needs to be put on a remote mySQL instance to be reachable.
+
+  // var connection = mysql.createConnection({
+  //   host: "localhost",
+  //   user: "MargaretIT",
+  //   password: "VNksjuds998",
+  //   database: invoices,
+  // });
+  // connection.connect();
+
+  // try {
+  //   connection.query(
+  //     oldquery
+  //       (resultArray[0],
+  //       resultArray[1],
+  //       resultArray[2],
+  //       resultArray[3],
+  //       resultArray[4])
+  //     })
+  //   );
+  // } catch {
+  //   console.log("The query could not be run");
+  // }
+
+  // connection.end();
