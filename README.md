@@ -1,28 +1,30 @@
 # profitCalculator
 
-## Doel
-O.b.v. het factuurbedrag en ingevoerde kosten een inschatting maken hoe winstgevend de Social Media / Wordpress opdracht is.
+## Goal
+Based on invoice amount + costs, estimate how profitable the Social Media / WordPress assignment will be.
 
-## MVP
-Gebruiker voert in formulier het bruto bedrag in wat de klant heeft voorgesteld of met de klant is afgesproken.
+## User-story
+User fills in the invoice amount before taxes. 
+With the sliders you can enter the costs of:
+- clothes (standard 5 euros)
+- make-up (~)
+- decoration (standard 1 euro)
+- new software like Canva Pro, Elementor Pro, Adobe XD (standard 1 euro)
+- expected work hours needed including filming, editing etc. (standard 5 hours)
 
-Hieronder staan invulvelden, sliders etc. om aan te geven:
-- kosten kleding (standaard op 5 euro)
-- kosten make-up (standaard op 5 euro)
-- kosten decoratie (standaard op 1 euro)
-- kosten nieuwe software, bijv. Canva Pro, Elementor Pro, Adobe XD (standaard 1 euro)
-- verwachtte werktijd (in uren, standaard op 5)
+After using 'Reken uit' the result is displayed.
+- Rood means net profit of < 20 euros/hour
+- Orange net profit of       20-30 euros/hour (including 30)
+- Green net profit of        > 30 euros/hour
 
-Nadat je klaar bent met invullen, kun je op GO klikken om het resultaat weer te geven.
-- Rood bij een netto winst < 20 euro per uur
-- Oranje bij een netto winst van 20-30 euro per uur (inclusief)
-- Groen bij een netto winst van > 30 euro per uur
-- Onder het resultaat staat een voorstel tot verhoging van het factuurbedrag om tot een groene codering te komen.
+- When red or orange, an additional text shows up to suggest a rate increase to reach green profit levels.
 
-## Versie 1.1
-Nieuwe features
-- Back-end die de factuur bewaart
-- Alert o.i.d. dat vraagt om naam bedrijf en datum
+## New features to come
+- Storing the invoice in the database invoiceTable with four columns: 1 net amount earned 2 hours worked 3 invoice date 4 company name.
+- Separate page to search for old invoices (in said DB) based on company name.
+- ~ search for old invoices based on earned hours, to compare between companies.
 
-## Bug fixes
-Nog onbekend
+## Technical details
+- Front-end uses HTML5, CSS3 and Vanilla JS.
+- API uses Axios framework
+- Database is built with mySQL and run locally
