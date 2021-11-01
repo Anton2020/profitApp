@@ -29,7 +29,7 @@ function register() {
   favourite_song = document.getElementById("favourite_song").value;
   MacDo_or_KFC = document.getElementById("MacDo_or_KFC").value;
 
-  if (validate_email == false) {
+  if (!validate_email) {
     alert("Het ingevoerde e-mailadres is ongeldig.");
     return;
   } else if (!validate_password) {
@@ -46,7 +46,7 @@ function register() {
   } else {
     auth
       .createUserWithEmailAndPassword(email, password)
-      .then(function () {
+      .then(async function () {
         var user = auth.currentUser;
 
         //Add user to Firebase DB
@@ -60,11 +60,14 @@ function register() {
           MacDo_or_KFC: MacDo_or_KFC,
           last_login: Date.now(),
         };
+        await user.sendEmailVerification();
 
         //save new user to the DB
         database_ref.child("users/" + user.uid).set(user_data);
 
-        alert("Gebruiker aangemaakt");
+        alert(
+          "De account is aangemaakt, open de link in je e-mail om deze te activeren."
+        );
       })
       .catch(function (error) {
         var error_code = error.error_code;
@@ -77,7 +80,7 @@ function register() {
 function login() {
   email = document.getElementById("email").value;
   password = document.getElementById("password").value;
-  if (validate_email == false) {
+  if (!validate_email) {
     alert("Het ingevoerde e-mailadres is ongeldig.");
     return;
   } else if (!validate_password) {
@@ -90,7 +93,11 @@ function login() {
     .signInWithEmailAndPassword(email, password)
     .then(function () {
       var user = auth.currentUser;
-
+      //Check if user is already verified
+      if (!user.emailVerified) {
+        alert("Activeer alsjeblieft eerst je account via de mail");
+        return;
+      }
       var database_ref = database.ref();
 
       var user_data = {
@@ -119,8 +126,9 @@ function login() {
     });
 }
 function validate_email(email) {
-  expression = /^[^@]+@\w+(\.\w+)+\w$/;
-  return expression.test(email) == true ? true : false;
+  //source: https://newbedev.com/regular-expression-validate-gmail-addresses
+  let expression = /^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$/i;
+  return email.match(expression);
 }
 
 function validate_password(password) {
