@@ -30,4 +30,5 @@ The invoice is stored in the database with four columns: 1 hours worked 2 net am
 ## Technical details
 - Front-end uses HTML5, CSS3 and (mostly) Vanilla JS.
 - Connect to mySQL with mysqljs: https://mysqljs.com/
-- Database is built with mySQL and run on remote (free) hosting
+- Invoice database is built with mySQL and run on remote (free) hosting
+- Login screen built using Google Firebase https://console.firebase.google.com/
