@@ -9,27 +9,3 @@ CREATE TABLE invoices (
 );
 
 Needs to be put on a remote mySQL instance to be reachable.
-
-  // var connection = mysql.createConnection({
-  //   host: "localhost",
-  //   user: "MargaretIT",
-  //   password: "VNksjuds998",
-  //   database: invoices,
-  // });
-  // connection.connect();
-
-  // try {
-  //   connection.query(
-  //     oldquery
-  //       (resultArray[0],
-  //       resultArray[1],
-  //       resultArray[2],
-  //       resultArray[3],
-  //       resultArray[4])
-  //     })
-  //   );
-  // } catch {
-  //   console.log("The query could not be run");
-  // }
-
-  // connection.end();

@@ -1,3 +1,11 @@
+if (sessionStorage.getItem("AuthenticationState") === null) {
+  window.open("login.html", "_self");
+} else if (
+  Date.now > new Date(sessionStorage.getItem("AuthenticationExpires"))
+) {
+  window.open("login.html", "_self");
+}
+
 //Retrieving DOM elements
 let brutoBedragElem = document.getElementById("brutoBedragEntry");
 let nettoWinstElem = document.getElementById("nettoWinst");
