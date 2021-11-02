@@ -81,7 +81,11 @@ function calculateProfitPerHour(netProfitResult) {
   resultArray.push(nettoWinst);
   nettoWinstElem.innerHTML = nettoWinst;
 
-  setTimeout(confirmToStoreInDB(), 3000);
+  myAsyncFunction();
+}
+async function myAsyncFunction() {
+  await delay(4);
+  confirmToStoreInDB();
 }
 
 function confirmToStoreInDB() {
