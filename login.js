@@ -75,7 +75,7 @@ function login() {
   email = document.getElementById("email").value;
   password = document.getElementById("password").value;
   MacDo_or_KFC = document.getElementById("MacDo_or_KFC").value;
-  
+
   if (!validate_email) {
     alert("Het ingevoerde e-mailadres is ongeldig.");
     return;
