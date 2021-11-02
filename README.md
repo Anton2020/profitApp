@@ -27,10 +27,10 @@ After using 'Reken uit' the result is displayed.
 - ~ search for old invoices based on earned hours, to compare between companies.
 
 ## Suggestions
-Which browser should I use ?
+### Which browser should I use ?
 Website works best in Mozilla Firefox, in other browsers the rate increase might show up after the question to store in DB.
 
-I cannot sign up
+### I cannot sign up
 For safety concerns, only very specific users can register. 
 Feel free to let me know if you want to test the profitApp, I can give you a temporary account (valid for 1 day only).
 Contact details here: https://github.com/Anton2020
