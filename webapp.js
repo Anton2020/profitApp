@@ -151,7 +151,7 @@ function connectToDB(resultArray) {
   var mysql = require('mysql2');
   });
   
-  var connection = mysql.createConnection({
+  var connection = mysql2.createConnection({
   host     : 'sql11.freemysqlhosting.net',
   user     : 'sql11448055',
   password : 'DS7RpH5Mtf',
