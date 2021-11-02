@@ -143,7 +143,10 @@ function connectToDB(resultArray) {
   //   }
   // );
 
-  var requirejs = require('requirejs');
+  require(['requirejs'], function (requirejs) {
+});
+
+  //var requirejs = require('requirejs');
 
 requirejs.config({
     //Pass the top-level main.js/index.js require
