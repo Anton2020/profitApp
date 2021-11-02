@@ -149,7 +149,7 @@ function prepareConnectionToDB(resultArray) {
   //   }
   // );
 
-  require(['mysql'], function(mysql) {
+  require(['mysql2'], function(mysql) {
   var connection = mysql.createConnection({
   host     : 'sql11.freemysqlhosting.net',
   user     : 'sql11448055',
