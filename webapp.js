@@ -112,16 +112,21 @@ function askForDate() {
   //3rd result for the DB
   resultArray.push(date);
 
-  askForCompanyNameAndReturnDBInput();
+  askForCompanyName();
 }
 
-function askForCompanyNameAndReturnDBInput() {
+function requireMySQL() {
+  let mysql = require(['mysql'], function() {});
+  return mysql;
+}
+
+function askForCompanyName() {
   let companyName = prompt("Hoe heet het bedrijf ?");
   //4th result for the DB
   resultArray.push(companyName);
 
-//   connectToDBAndPost(resultArray);
-  require(['mysql'], connectToDBAndPost(resultArray));
+  connectToDBAndPost(resultArray);
+  
 }
 
 function connectToDBAndPost(resultArray) {
@@ -130,7 +135,7 @@ function connectToDBAndPost(resultArray) {
   let invoice_date = resultArray[2];
   let companyName = resultArray[3];
 
-  //var mysql      = require(['mysql'], function (foo) {});
+  var mysql      = requireMySQL();
 
   const query = `INSERT INTO invoices (hoursWorked, netAmountEarned, invoice_date, companyName) VALUES(${hoursWorked},${netAmountEarned},"${invoice_date}","${companyName}")`;
   //uses HTTP, will only work in conjunction with GitHub pages if I use a custom domain
