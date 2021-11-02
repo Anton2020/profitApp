@@ -121,7 +121,7 @@ function askForCompanyNameAndReturnDBInput() {
   resultArray.push(companyName);
 
 //   connectToDBAndPost(resultArray);
-  require(['mysql'], connectToDBAndPost(resultArray););
+  require(['mysql'], connectToDBAndPost(resultArray));
 }
 
 function connectToDBAndPost(resultArray) {
