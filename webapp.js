@@ -115,10 +115,6 @@ function askForDate() {
   askForCompanyName();
 }
 
-function requireMySQL() {
-  
-}
-
 function askForCompanyName() {
   let companyName = prompt("Hoe heet het bedrijf ?");
   //4th result for the DB
@@ -147,11 +143,24 @@ function connectToDB(resultArray) {
   //   }
   // );
 
-  define(function (require) {
+  var requirejs = require('requirejs');
+
+requirejs.config({
+    //Pass the top-level main.js/index.js require
+    //function to requirejs so that node modules
+    //are loaded relative to the top-level JS file.
+    nodeRequire: require
+});
+
+requirejs(['mysql2'],
+function   (mysql2) {
+    //foo and bar are loaded according to requirejs
+    //config, but if not found, then node's require
+    //is used to load the module.
+});
   var mysql = require('mysql2');
-  });
   
-  var connection = mysql2.createConnection({
+  var connection = mysql.createConnection({
   host     : 'sql11.freemysqlhosting.net',
   user     : 'sql11448055',
   password : 'DS7RpH5Mtf',
