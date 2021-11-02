@@ -4,6 +4,9 @@
 Based on invoice amount + costs, estimate how profitable the Social Media / WordPress assignment will be.
 
 ## User-story
+User registers at first time-use by entering e-mail address, password and security question.
+User confirms their registration by e-mail. After confirmation, logging in is allowed and user is sent to the profitApp page.
+
 User fills in the invoice amount before taxes. 
 With the sliders you can enter the costs of:
 - clothes (standard 5 euros)
@@ -19,16 +22,31 @@ After using 'Reken uit' the result is displayed.
 
 - When red or orange, an additional text shows up to suggest a rate increase to reach green profit levels.
 
-## Other
-The invoice is stored in the database with four columns: 1 hours worked 2 net amount earned 3 invoice date 4 company name.
-
 ## New features to come
-- Login screen or other way to remove login details from view
 - Separate page to search for old invoices (in said DB) based on company name.
 - ~ search for old invoices based on earned hours, to compare between companies.
 
-## Technical details
-- Front-end uses HTML5, CSS3 and (mostly) Vanilla JS.
-- Connect to mySQL with mysqljs: https://mysqljs.com/
-- Invoice database is built with mySQL and run on remote (free) hosting
-- Login screen built using Google Firebase https://console.firebase.google.com/
+## Suggestions
+Which browser should I use ?
+Website works best in Mozilla Firefox, in other browsers the rate increase might show up after the question to store in DB.
+
+I cannot sign up
+For safety concerns, only very specific users can register. 
+Feel free to let me know if you want to test the profitApp, I can give you a temporary account (valid for 1 day only).
+Contact details here: https://github.com/Anton2020
+
+## Technical details 
+
+### Front-end
+- HTML5, CSS3 and (mostly) Vanilla JS.
+
+### Invoice database
+- Front-end connects to mySQL with mysqljs: https://mysqljs.com/
+- Invoice database is built with mySQL and runs on remote (free) hosting
+
+### Login screen
+- (Heavily) influenced by this tutorial: https://www.youtube.com/watch?v=b1ULt_No3IY
+
+### User database
+- Authentication is handled by Google Firebase real-time database https://console.firebase.google.com/
+
