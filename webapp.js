@@ -129,7 +129,7 @@ function connectToDBAndPost(resultArray) {
   let invoice_date = resultArray[2];
   let companyName = resultArray[3];
 
-  var mysql      = require('mysql');
+  var mysql      = require(['mysql'], function (foo) {});
 
   const query = `INSERT INTO invoices (hoursWorked, netAmountEarned, invoice_date, companyName) VALUES(${hoursWorked},${netAmountEarned},"${invoice_date}","${companyName}")`;
   //uses HTTP, will only work in conjunction with GitHub pages if I use a custom domain
