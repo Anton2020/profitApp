@@ -131,38 +131,20 @@ function connectToDB(resultArray) {
   let companyName = resultArray[3];
 
   const query = `INSERT INTO invoices (hoursWorked, netAmountEarned, invoice_date, companyName) VALUES(${hoursWorked},${netAmountEarned},"${invoice_date}","${companyName}")`;
-  //uses HTTP, will only work in conjunction with GitHub pages if I use a custom domain
-  // MySql.Execute(
-  //   "sql11.freemysqlhosting.net", //host
-  //   "sql11448055", //username
-  //   "DS7RpH5Mtf", //password
-  //   "sql11448055", //database
-  //   query,
-  //   function (data) {
-  //     console.log(data);
-  //   }
-  // );
-
-  const mysql = require('mysql');
-  
-  var connection = mysql.createConnection({
-  host     : 'sql11.freemysqlhosting.net',
-  user     : 'sql11448055',
-  password : 'DS7RpH5Mtf',
-  database : 'sql11448055'
-  });
- 
-  connection.connect();
- 
-  connection.query(query, function (error, results, fields) {
-    if (error) throw error;
-    console.log('The solution is: ', results[0].solution);
-   });
- 
-  connection.end();
+  //Uses HTTP, will only work in conjunction with GitHub pages if I use a custom domain.
+  //Will do for this project, diving deep into Node and Express is for later.
+  MySql.Execute(
+    "sql11.freemysqlhosting.net", //host
+    "sql11448055", //username
+    "DS7RpH5Mtf", //password
+    "sql11448055", //database
+    query,
+    function (data) {
+      console.log(data);
+    }
+  );
 }
 
-  
 //oninput to make the slider update dynamically
 clothesCostElem.oninput = updateClothesCostDisplay;
 makeupCostElem.oninput = updateMakeupCostDisplay;
@@ -171,6 +153,3 @@ softwareCostElem.oninput = updateSoftwareCostDisplay;
 
 //Calculate the colour based on the net profit result
 goBtnElem.addEventListener("click", calculateProfit);
-
-//Store the data from index.html form & DB form in the database
-//storeInDbElem.addEventListener("click", sampleFunction);
