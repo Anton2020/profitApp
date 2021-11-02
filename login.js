@@ -74,13 +74,21 @@ function register() {
 function login() {
   email = document.getElementById("email").value;
   password = document.getElementById("password").value;
+  MacDo_or_KFC = document.getElementById("MacDo_or_KFC").value;
+  
   if (!validate_email) {
     alert("Het ingevoerde e-mailadres is ongeldig.");
     return;
   } else if (!validate_password) {
     alert("Wachtwoord is te kort");
     return;
-  }
+  } else if (
+    MacDo_or_KFC !='KFC'
+  ) {
+    alert(
+      "Vul alsjeblieft in of je liever MacDo of KFC eet."
+    );
+  return;}
 
   //pass in the e-mail and password set during registration
   auth
@@ -108,7 +116,7 @@ function login() {
         new Date().getTime() + 15 * 60000
       );
       window.open(
-        "file:///C:/Users/konin/OneDrive/Ewout/Web/profitApp/index.html",
+        "index.html",
         "_self"
       );
     })
