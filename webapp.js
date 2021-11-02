@@ -163,8 +163,8 @@ function prepareConnectionToDB(resultArray) {
    });
  
   connection.end();
-  } 
   });
+}
   
 //oninput to make the slider update dynamically
 clothesCostElem.oninput = updateClothesCostDisplay;
