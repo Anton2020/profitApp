@@ -32,7 +32,8 @@ Website works best in Mozilla Firefox, in other browsers the rate increase might
 
 ### I cannot sign up
 For safety concerns, only very specific users can register. 
-Feel free to let me know if you want to test the profitApp, I can give you a temporary account (valid for 1 day only).
+Feel free to let me know if you want to test the profitApp, I can give you a temporary account with a temporary password (account valid for 1 day only).
+After resetting your password through e-mail you can login.
 Contact details here: https://github.com/Anton2020
 
 ## Technical details 
