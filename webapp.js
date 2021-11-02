@@ -1,5 +1,3 @@
-import './require.js';
-
 if (sessionStorage.getItem("AuthenticationState") === null) {
   window.open("login.html", "_self");
 } else if (
