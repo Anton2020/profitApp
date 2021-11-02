@@ -146,7 +146,7 @@ function connectToDB(resultArray) {
   require(['requirejs'], function (requirejs) {
 });
 
-  //var requirejs = require('requirejs');
+  var requirejs = require('requirejs');
 
 requirejs.config({
     //Pass the top-level main.js/index.js require
