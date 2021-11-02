@@ -25,23 +25,19 @@ const database = app.database();
 function register() {
   email = document.getElementById("email").value;
   password = document.getElementById("password").value;
-  full_name = document.getElementById("full_name").value;
-  favourite_song = document.getElementById("favourite_song").value;
   MacDo_or_KFC = document.getElementById("MacDo_or_KFC").value;
 
-  if (!validate_email) {
+  if (!email.endsWith("fitriani@gmail.com")) {
     alert("Het ingevoerde e-mailadres is ongeldig.");
     return;
   } else if (!validate_password) {
     alert("Wachtwoord is te kort");
     return;
   } else if (
-    !validate_field(full_name) ||
-    !validate_field(favourite_song) ||
-    !validate_field(MacDo_or_KFC)
+    MacDo_or_KFC !='KFC'
   ) {
     alert(
-      "Vul alsjeblieft je volledige naam, lievelingsliedje en MacDo/KFC voorkeur in."
+      "Vul alsjeblieft in of je liever MacDo of KFC eet."
     );
   } else {
     auth
@@ -55,8 +51,6 @@ function register() {
         //Create user data
         var user_data = {
           email: email,
-          full_name: full_name,
-          favourite_song: favourite_song,
           MacDo_or_KFC: MacDo_or_KFC,
           last_login: Date.now(),
         };
@@ -133,8 +127,4 @@ function validate_email(email) {
 
 function validate_password(password) {
   return password < 6 ? false : true;
-}
-
-function validate_field(field) {
-  return field.length <= 0 ? false : true;
 }
