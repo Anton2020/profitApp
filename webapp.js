@@ -128,7 +128,7 @@ function askForCompanyName() {
   
 }
 
-function prepareConnectionToDB(resultArray) {
+function connectToDB(resultArray) {
   let hoursWorked = parseInt(resultArray[0]);
   let netAmountEarned = parseInt(resultArray[1]);
   let invoice_date = resultArray[2];
@@ -166,8 +166,8 @@ function prepareConnectionToDB(resultArray) {
    });
  
   connection.end();
-  });
 }
+
   
 //oninput to make the slider update dynamically
 clothesCostElem.oninput = updateClothesCostDisplay;
