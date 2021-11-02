@@ -83,6 +83,15 @@ function calculateProfitPerHour(netProfitResult) {
 
   myAsyncFunction();
 }
+
+//Async functions to wait 4 seconds
+
+function delay(n) {
+  return new Promise(function(resolve) {
+    setTimeout(resolve, n * 1000);
+  });
+}
+
 async function myAsyncFunction() {
   await delay(4);
   confirmToStoreInDB();
