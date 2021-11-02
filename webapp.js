@@ -1,5 +1,3 @@
-import 'require.js';
-
 if (sessionStorage.getItem("AuthenticationState") === null) {
   window.open("login.html", "_self");
 } else if (
@@ -149,7 +147,7 @@ function prepareConnectionToDB(resultArray) {
   //   }
   // );
 
-  require(['mysql'], function(mysql) {
+  requirejs(['mysql'], function(mysql) {
   var connection = mysql.createConnection({
   host     : 'sql11.freemysqlhosting.net',
   user     : 'sql11448055',
