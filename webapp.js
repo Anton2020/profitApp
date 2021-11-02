@@ -24,8 +24,8 @@ let resultArray = [];
 
 //methods
 function nettoStartCalc() {
-  let netAmount = 0;
-  return (netAmount = brutoBedragElem.value * 0.8);
+  let netAmount = brutoBedragElem.value * 0.8;
+  return netAmount;
 }
 
 function updateClothesCostDisplay() {
