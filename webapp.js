@@ -124,7 +124,7 @@ function askForCompanyName() {
   //4th result for the DB
   resultArray.push(companyName);
 
-  prepareConnectionToDB(resultArray);
+  connectToDB(resultArray);
   
 }
 
