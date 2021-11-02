@@ -116,8 +116,7 @@ function askForDate() {
 }
 
 function requireMySQL() {
-  let mysql = require(['mysql'], function() {});
-  return mysql;
+  
 }
 
 function askForCompanyName() {
@@ -125,17 +124,15 @@ function askForCompanyName() {
   //4th result for the DB
   resultArray.push(companyName);
 
-  connectToDBAndPost(resultArray);
+  prepareConnectionToDB(resultArray);
   
 }
 
-function connectToDBAndPost(resultArray) {
+function prepareConnectionToDB(resultArray) {
   let hoursWorked = parseInt(resultArray[0]);
   let netAmountEarned = parseInt(resultArray[1]);
   let invoice_date = resultArray[2];
   let companyName = resultArray[3];
-
-  var mysql      = requireMySQL();
 
   const query = `INSERT INTO invoices (hoursWorked, netAmountEarned, invoice_date, companyName) VALUES(${hoursWorked},${netAmountEarned},"${invoice_date}","${companyName}")`;
   //uses HTTP, will only work in conjunction with GitHub pages if I use a custom domain
@@ -150,23 +147,25 @@ function connectToDBAndPost(resultArray) {
   //   }
   // );
 
-  
+  require(['mysql'], function(mysql) {
   var connection = mysql.createConnection({
   host     : 'sql11.freemysqlhosting.net',
   user     : 'sql11448055',
   password : 'DS7RpH5Mtf',
   database : 'sql11448055'
-});
+  });
  
-connection.connect();
+  connection.connect();
  
-connection.query(query, function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results[0].solution);
-});
+  connection.query(query, function (error, results, fields) {
+    if (error) throw error;
+    console.log('The solution is: ', results[0].solution);
+   });
  
-connection.end();
-}
+  connection.end();
+  } 
+  });
+  
 //oninput to make the slider update dynamically
 clothesCostElem.oninput = updateClothesCostDisplay;
 makeupCostElem.oninput = updateMakeupCostDisplay;
