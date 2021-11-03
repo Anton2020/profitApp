@@ -18,7 +18,7 @@
 
       <p>Met deze rekentool kun je snel zien of een freelance opdracht winstgevend genoeg is.
       </p>
-      <form action="insert.php" method="POST">
+      <form action="" method="POST" class="left">
         <label for="brutoBedragEntry">Bruto bedrag:</label>
         <input type="number" name="brutoBedragEntry" id="brutoBedragEntry" value="100" required placeholder="200">
     
@@ -52,10 +52,11 @@
       </form>
       <button id="goBtn" type="input">Reken uit</button>
 
+      <div id="right"><p>Wil je liever oude facturen bekijken ? <a href="searchPastWork.html">Klik hier</a></p></div>
       </main>
     <br>
     <br>  
-    <footer><p>Project by Ewout, Oct/Nov 2021
+    <footer class="left"><p>Project by Ewout, Oct/Nov 2021
       Image courtesy of <a href="https://visaguide.world/tips/freelancing-germany/">Visa Guide</a>
     </p></footer>
     <!--Needs to be here, otherwise the form input id's cannot be found by js. <script src="webapp.js" type="module"></script>-->
