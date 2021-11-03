@@ -5,41 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Je resultaten</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="webapp.js"></script>
+    <link rel="stylesheet" href="searchPastWork.css">
   </head>
-  <p id="test">Zoek op bedrijfsnaam voor specifieke facturen</p>
+  <p class="searchInfo">Zoek op bedrijfsnaam voor specifieke facturen</p>
   <form>
     <label for="companyNameEntry">Bedrijfsnaam</label>
-    <input type="text" name="companyNameEntry" id="companyNameEntry"  placeholder="Curly BV">
+    <input type="text" name="companyNameEntry" id="companyNameEntry" value="'Curly BV'">
     <button id="searchCompanies" type="button">Zoeken naar bedrijven</button>
 
-    <p>Zoek op aantal uren werk om snel bedrijven te kunnen vergelijken.</p>
+    <p class="searchInfo">Zoek op aantal uren werk om snel bedrijven te kunnen vergelijken</p>
     <label for="hoursWorkedEntry">Aantal uur gewerkt</label>
-    <input type="number" name="hoursWorkedEntry" id="hoursWorkedEntry" min="1" max="20" placeholder="5">
+    <input type="number" name="hoursWorkedEntry" id="hoursWorkedEntry" min="1" max="20" value="5">
     <br>
     <br>
   </form>
   <button id="searchHours" type="submit">Zoeken naar uren</button>
 
-  <table style="width:100%">
-    <tr>
-      <th>Hours</th>
-      <th>Amount</th>
-      <th>Date</th>
-      <th>Company</th>
-    </tr>
-    <tr>
-      <td>a</td>
-      <td>b</td>
-      <td>c</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
+  <p id="output">Search results will appear here.</p>
 
   <p>Go back to <a href="index.html">homepage.</a></p>
 
