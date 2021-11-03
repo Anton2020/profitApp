@@ -73,7 +73,12 @@ function connectToDBShowByCompanyName() {
         let outputDate = makeDateLegible(date);
         output += `Op ${outputDate} verdiende je ${data.Result[res].netAmountEarned} euro bij dit bedrijf. ${newLine}`;
       }
-      outputElem.innerHTML = output;
+      if (output != "") {
+        outputElem.innerHTML = output;
+      } else {
+        outputElem.innerHTML =
+          "Er zijn helaas geen bedrijven gevonden met deze naam. Denk eraan dat je zoekt tussen aanhalingstekens.";
+      }
     }
   );
 }
@@ -98,7 +103,12 @@ function connectToDBShowByEarnedHours() {
         companyName = data.Result[res].companyName;
         output += `Bij ${companyName} kan je met ${hoursWorked} uur werk ${data.Result[res].netAmountEarned} euro netto verdienen. ${newLine}`;
       }
-      outputElem.innerHTML = output;
+      if (output != "") {
+        outputElem.innerHTML = output;
+      } else {
+        outputElem.innerHTML =
+          "Er zijn helaas geen facturen gevonden met dit aantal uren.";
+      }
     }
   );
 }
