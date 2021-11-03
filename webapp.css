@@ -33,10 +33,11 @@ figure figcaption {
   display: none;
 }
 
-#left {
-  float: left;
+.left {
+  float: inline-start;
+  display: block;
 }
 
 #right {
-  float: right;
+  float: inline-end;
 }
