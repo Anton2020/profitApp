@@ -22,13 +22,11 @@ After using 'Reken uit' the result is displayed.
 
 - When red or orange, an additional text shows up to suggest a rate increase to reach green profit levels.
 
-## New features to come
-- Separate page to search for old invoices (in said DB) based on company name.
-- ~ search for old invoices based on earned hours, to compare between companies.
+After moving to the Invoices page, the user can:
+- search for old invoices based on company name.
+- search for old invoices based on earned hours, to compare between companies.
 
-## Suggestions
-### Which browser should I use ?
-Website works best in Mozilla Firefox, in other browsers the rate increase might show up after the question to store in DB.
+## FAQ
 
 ### I cannot sign up
 For safety concerns, only very specific users can register. 
@@ -51,3 +49,6 @@ Contact details here: https://github.com/Anton2020
 ### User database
 - Authentication is handled by Google Firebase real-time database https://console.firebase.google.com/
 
+### Security
+Unfortunately the website cannot use HTTPS, because mysqljs uses an http ASP.net page.
+Once I know more about Node, Express etc. I might make a new version from scratch that uses a different (my)SQL tool that is HTTPS ready.
